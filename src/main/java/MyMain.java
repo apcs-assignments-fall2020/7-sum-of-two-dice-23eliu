@@ -5,20 +5,36 @@ public class MyMain {
     // Rolls a single die
     // Returns a random integer between 1 and 6
     public static int rollDie() {
-        // REPLACE YOUR CODE HERE
-        return -1;
+        return (int) (Math.random() * 6) + 1;
     }
 
     // Rolls two dice n times
     // This method returns an int array of size 11, where each element is
     // the number of times a certain sum of two dice was rolled
     public static int[] sumOfTwoDice(int n) {
-        // REPLACE YOUR CODE HERE
-        return null;
+        int[] arr = new int[11];
+        int roll = 0;
+        for (int j = 1; j <= n; j++) {
+            roll = rollDie() + rollDie();
+            for (int k = 2; k <= 12; k++) {
+                if (roll == k) {
+                    arr[k-2]++;
+                }
+                else {
+                    continue;
+                }
+            }
+        }
+        return arr;
     }
 
 
     public static void main(String[] args) {
-        // YOUR CODE HERE
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("How many pairs of dice would you like to roll?");
+        System.out.println(sumOfTwoDice(Integer.parseInt(scan.next())));
+
+        scan.close();
     }
 }
