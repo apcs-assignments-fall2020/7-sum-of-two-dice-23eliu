@@ -34,8 +34,8 @@ public class MyMain {
 
         System.out.println("How many pairs of dice would you like to roll?");
 
-        for (int i = 0; i < sumOfTwoDice(Integer.parseInt(scan.next)).length; i++) {
-            System.out.print(sumOfTwoDice(Integer.parseInt(scan.next))[i] + " ");
+        for (int i = 0; i < sumOfTwoDice(Integer.parseInt(scan.next())).length; i++) {
+            System.out.print(sumOfTwoDice(Integer.parseInt(scan.next()))[i] + " ");
         } 
 
         scan.close();
